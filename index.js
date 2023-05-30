@@ -37,6 +37,9 @@ function getContrastColor(hexColor) {
 	let brightness = (r * 299 + g * 587 + b * 114) / 1000
 	return brightness > 155 ? "black" : "white"
 }
+String.prototype.toCapitalize = function () {
+	return this.toLowerCase().replace(/\b\w/g, char => char.toUpperCase())
+}
 
 fetch(
 	"https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=dark-beige-aesthetic"
@@ -46,7 +49,9 @@ fetch(
 		document.body.style.backgroundImage = `url(${data.urls.full})`
 		let textColor = getContrastColor(data.color)
 		document.body.style.color = textColor
-		document.getElementById("author").textContent = `By: ${data.user.name}`
+		document.getElementById(
+			"author"
+		).textContent = `By: ${data.user.name.toCapitalize()}`
 	})
 	.catch(err => {
 		document.body.style.backgroundImage = `url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUzNTY2OTF8&ixlib=rb-4.0.3&q=80&w=1080")`
