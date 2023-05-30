@@ -1,3 +1,35 @@
+function clearName() {
+	const nameSpan = document.getElementById("nameSpan")
+	nameSpan.textContent = ""
+	nameSpan.focus()
+}
+
+window.onload = function () {
+	const nameSpan = document.getElementById("nameSpan")
+	const storedName = localStorage.getItem("userName")
+
+	if (storedName) {
+		nameSpan.textContent = storedName
+	}
+
+	nameSpan.addEventListener("click", clearName)
+
+	nameSpan.addEventListener("input", function () {
+		const newUserName = nameSpan.textContent
+		localStorage.setItem("userName", newUserName)
+	})
+	const input = document.querySelector("input")
+	const storedValue = localStorage.getItem("inputValue")
+
+	if (storedValue) {
+		input.value = storedValue
+	}
+
+	input.addEventListener("input", function (event) {
+		localStorage.setItem("inputValue", event.target.value)
+	})
+}
+
 function getContrastColor(hexColor) {
 	let r = parseInt(hexColor.slice(1, 3), 16)
 	let g = parseInt(hexColor.slice(3, 5), 16)
@@ -20,7 +52,6 @@ fetch(
 		document.body.style.backgroundImage = `url("https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxNDI0NzB8MHwxfHJhbmRvbXx8fHx8fHx8fDE2ODUzNTY2OTF8&ixlib=rb-4.0.3&q=80&w=1080")`
 		document.getElementById("author").textContent = `By: Marita Kavelashvili`
 	})
- 
 
 function getCurrentTime() {
 	const date = new Date()
@@ -96,16 +127,3 @@ fetch("https://api.adviceslip.com/advice")
 		document.getElementById("randomUseless").textContent = data.slip.advice
 	})
 	.catch(err => console.error(err))
-
-window.onload = function () {
-	const input = document.querySelector("input")
-	const storedValue = localStorage.getItem("inputValue")
-
-	if (storedValue) {
-		input.value = storedValue
-	}
-
-	input.addEventListener("input", function (event) {
-		localStorage.setItem("inputValue", event.target.value)
-	})
-}
