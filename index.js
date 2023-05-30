@@ -129,6 +129,6 @@ fetch("https://api.adviceslip.com/advice")
 	.then(data => {
 		console.log(data.slip.advice)
 
-		document.getElementById("randomUseless").textContent = data.slip.advice
+		document.getElementById("randomAdvices").textContent = data.slip.advice
 	})
 	.catch(err => console.error(err))
