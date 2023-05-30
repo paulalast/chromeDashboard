@@ -1,0 +1,177 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	position: relative;
+	margin: 0;
+	background: no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	color: rgb(248, 245, 245);
+	font-family: "Montserrat", sans-serif;
+	font-family: "Yaldevi", sans-serif;
+	text-shadow: 0px 0px 4px rgba(57, 56, 56, 0.679);
+	z-index: -10;
+}
+body::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: #51463358;
+	z-index: 0;
+}
+main {
+	padding: 15px;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0.5rem 2rem;
+	z-index: 10;
+}
+
+div.top {
+	display: flex;
+	justify-content: space-between;
+	z-index: 10;
+}
+.center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+h1.time {
+	text-align: center;
+	font-size: 10rem;
+	font-weight: 700;
+	letter-spacing: 0.2rem;
+	margin-bottom: 2rem;
+	z-index: 10;
+}
+h2#hello {
+	display: inline-block;
+	justify-self: center;
+	align-self: center;
+	margin: 0;
+	font-size: 3rem;
+	/* background-color: #423f3f42; */
+
+	font-weight: 400;
+	width: 100%;
+	text-align: center;
+	z-index: 10;
+}
+h3#randomUseless {
+	text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.558);
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	justify-self: center;
+	text-align: center;
+	font-weight: 200;
+	font-style: italic;
+	padding: 1rem 3rem;
+	bottom: 0;
+	margin: 1rem 0;
+	font-size: 1.4rem;
+	z-index: 10;
+}
+div#crypto {
+	font-size: 1.3rem;
+}
+
+div#crypto > p {
+	margin: 0;
+}
+
+div#crypto-top {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+div#crypto-top > span {
+	margin-left: 10px;
+}
+div#weather {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-self: flex-start;
+}
+
+div#weather > img {
+	width: 70px;
+}
+
+p.weather-city {
+	width: 100%;
+	text-align: right;
+	margin: 0;
+	margin-top: -10px;
+	font-size: 1.2rem;
+}
+
+p.weather-temp {
+	margin: 0;
+	font-size: 1.7rem;
+	margin-left: -10px;
+}
+p#author {
+	font-size: 1rem;
+}
+
+.weather-icon {
+	padding: 0.3rem;
+	margin: 0 1rem;
+}
+label {
+	display: inline-block;
+	margin-top: 1rem;
+	text-align: center;
+	font-size: 1.4rem;
+	font-style: italic;
+	text-align: center;
+	font-family: "Yaldevi", sans-serif;
+	text-shadow: 0px 0px 6px rgba(19, 19, 19, 0.792);
+	z-index: 10;
+}
+input {
+	position: relative;
+	border: none;
+	background: rgba(245, 245, 245, 0.049);
+	padding: 1rem;
+	margin: 1rem;
+	color: inherit;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.503);
+	width: 40%;
+	left: 50%;
+	transform: translateX(-52%);
+	outline: transparent;
+	font-size: 1.4rem;
+	font-style: italic;
+	text-align: center;
+	font-family: "Yaldevi", sans-serif;
+	text-shadow: 0px 0px 6px rgba(19, 19, 19, 0.792);
+	z-index: 10;
+}
+input:focus,
+input:active,
+input:focus-visible,
+input:focus-within {
+	border: none;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+	z-index: 10;
+	outline: transparent;
+}
